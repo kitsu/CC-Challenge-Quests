@@ -1,0 +1,545 @@
+{
+	id: 207,
+	filename: "processing",
+	order_index: 2,
+	title: "Processing",
+	icon: "silents_mechanisms:electric_furnace",
+	default_quest_shape: "",
+	quests: [
+		{
+			title: "About",
+			x: 0.0d,
+			y: -4.0d,
+			description: [
+				"This pack also includes Silent Mechanisms, because who doesn't want ore doubling?",
+				"Silent Mech is a new mod, and was selected primarily because it does not provide any item transport.",
+				"",
+				"Silent Mech provides the expected basic processing machines, along with a few extra oddballs.",
+				"It also includes a power system with a variety of generators and power wires.",
+				"",
+				"All this is optional, but having a little extra ore will help progress your computer empire."
+			],
+			dependencies: [I;91],
+			id: 208,
+			tasks: [{
+				id: 209,
+				type: "checkmark",
+				title: "Machines!",
+				icon: "silents_mechanisms:stone_machine_frame"
+			}],
+			rewards: [{
+				id: 210,
+				type: "item",
+				item: "minecraft:charcoal",
+				count: 16
+			}]
+		},
+		{
+			title: "First Machines",
+			x: 0.0d,
+			y: -2.5d,
+			shape: "rsquare",
+			description: [
+				"The first things you'll need are a basic generator and an alloy smelter.",
+				"Silent Mech includes a large variety of ores and alloys, and requires a variety of each in its machine construction.",
+				"",
+				"The coal generator requires refined iron, which is iron cooked twice, and you'll need some copper and tin for the smelter.",
+				"Place the generator down, then place the smelter on top, add fuel to charge both."
+			],
+			dependencies: [I;208],
+			id: 211,
+			tasks: [
+				{
+					id: 212,
+					type: "item",
+					item: "silents_mechanisms:coal_generator"
+				},
+				{
+					id: 213,
+					type: "item",
+					item: "silents_mechanisms:basic_alloy_smelter"
+				}
+			],
+			rewards: [
+				{
+					id: 214,
+					type: "item",
+					item: "silents_mechanisms:copper_ingot",
+					count: 3
+				},
+				{
+					id: 215,
+					type: "item",
+					item: "silents_mechanisms:tin_ingot"
+				}
+			]
+		},
+		{
+			x: -1.5d,
+			y: -2.5d,
+			shape: "rsquare",
+			description: [
+				"With the crusher you can turn one ore into two chunks, which can be smelted into ingots.",
+				"Like most of Silent's machines the crusher can be interacted with just like a furnace, with input on top and outputs on bottom."
+			],
+			dependencies: [I;211],
+			id: 216,
+			tasks: [{
+				id: 217,
+				type: "item",
+				item: "silents_mechanisms:basic_crusher"
+			}],
+			rewards: [
+				{
+					id: 218,
+					type: "item",
+					item: "minecraft:iron_ore",
+					count: 4
+				},
+				{
+					id: 219,
+					type: "item",
+					item: "minecraft:gold_ore",
+					count: 4
+				}
+			]
+		},
+		{
+			x: -1.5d,
+			y: -1.0d,
+			shape: "rsquare",
+			description: ["Putting ore chunks back through the crusher will produce dust, with a small chance of producing an extra dust."],
+			dependencies: [I;216],
+			id: 220,
+			tasks: [{
+				id: 221,
+				type: "item",
+				item: "silents_mechanisms:iron_dust"
+			}],
+			rewards: [
+				{
+					id: 222,
+					type: "item",
+					item: "silents_mechanisms:copper_ore",
+					count: 4
+				},
+				{
+					id: 224,
+					type: "item",
+					item: "silents_mechanisms:lead_ore",
+					count: 4
+				}
+			]
+		},
+		{
+			x: 1.5d,
+			y: -2.5d,
+			shape: "rsquare",
+			description: [
+				"An electric furnace cooks much quicker than a vanilla furnace, and uses power instead of fuel, saving on charcoal.",
+				"The electric furnace is probably also the first upgradable machine you'll make, allowing for improved speed or efficiency."
+			],
+			dependencies: [I;211],
+			id: 225,
+			tasks: [{
+				id: 226,
+				type: "item",
+				item: "silents_mechanisms:electric_furnace"
+			}],
+			rewards: [
+				{
+					id: 227,
+					type: "item",
+					item: "silents_mechanisms:silver_ore",
+					count: 4
+				},
+				{
+					id: 228,
+					type: "item",
+					item: "silents_mechanisms:bauxite_ore",
+					count: 4
+				}
+			]
+		},
+		{
+			x: 0.0d,
+			y: -1.0d,
+			shape: "rsquare",
+			description: ["Red alloy is required for power storage and transfer, and for advanced parts and machines."],
+			dependencies: [I;211],
+			id: 231,
+			tasks: [{
+				id: 232,
+				type: "item",
+				item: "silents_mechanisms:redstone_alloy_ingot"
+			}],
+			rewards: [{
+				id: 235,
+				type: "item",
+				item: "minecraft:redstone",
+				count: 8
+			}]
+		},
+		{
+			x: 1.5d,
+			y: 0.0d,
+			shape: "rsquare",
+			description: ["Batteries can be slotted into power consuming machines to charge them."],
+			dependencies: [I;231],
+			id: 233,
+			tasks: [{
+				id: 234,
+				type: "item",
+				item: {
+					id: "silents_mechanisms:battery",
+					Count: true,
+					tag: {}
+				}
+			}],
+			rewards: [{
+				id: 244,
+				type: "item",
+				item: "minecraft:redstone",
+				count: 6
+			}]
+		},
+		{
+			x: -1.5d,
+			y: 0.0d,
+			shape: "rsquare",
+			description: ["Wires provide power distribution without shuffling batteries around."],
+			dependencies: [I;231],
+			id: 237,
+			tasks: [{
+				id: 238,
+				type: "item",
+				item: "silents_mechanisms:wire"
+			}],
+			rewards: [{
+				id: 239,
+				type: "item",
+				item: "silents_mechanisms:redstone_alloy_ingot",
+				count: 3
+			}]
+		},
+		{
+			x: 0.0d,
+			y: 1.0d,
+			shape: "rsquare",
+			description: [
+				"A batbox stores power, and can smooth out supply and demand variance.",
+				"It can also store and charge up to six batteries, which also increases the storage capacity significantly."
+			],
+			dependencies: [I;
+				233,
+				237
+			],
+			id: 240,
+			tasks: [{
+				id: 241,
+				type: "item",
+				item: "silents_mechanisms:battery_box"
+			}],
+			rewards: [
+				{
+					id: 242,
+					type: "item",
+					item: {
+						id: "silents_mechanisms:battery",
+						Count: true,
+						tag: {}
+					}
+				},
+				{
+					id: 243,
+					type: "item",
+					item: "silents_mechanisms:wire",
+					count: 6
+				}
+			]
+		},
+		{
+			x: 0.0d,
+			y: 2.5d,
+			shape: "rsquare",
+			description: [
+				"Oil refining is getting into the deep end of this mod, but automating this with turtles should be a challenge.",
+				"The refiner produces diesel fuel and the precursor to plastic."
+			],
+			dependencies: [I;240],
+			id: 247,
+			tasks: [{
+				id: 248,
+				type: "item",
+				item: "silents_mechanisms:refinery"
+			}],
+			rewards: [
+				{
+					id: 251,
+					type: "item",
+					item: {
+						id: "silents_mechanisms:canister",
+						Count: true,
+						tag: {
+							CanisterFluid: "silents_mechanisms:oil"
+						}
+					},
+					count: 4
+				},
+				{
+					id: 273,
+					type: "item",
+					item: "silents_mechanisms:steel_ingot",
+					count: 4
+				}
+			]
+		},
+		{
+			x: 1.5d,
+			y: -1.0d,
+			shape: "rsquare",
+			description: [
+				"Canisters are like stackable buckets, except you can't fill them manually.",
+				"They are also used in some machine recipes.",
+				"",
+				"You can place them in a powered pump to fill them, then put them in a liquid consuming machine to fill it.",
+				"Eventually you can make a portable pump, but you'll need plastic first."
+			],
+			dependencies: [I;225],
+			id: 249,
+			tasks: [{
+				id: 250,
+				type: "item",
+				item: "silents_mechanisms:empty_canister"
+			}]
+		},
+		{
+			x: -1.5d,
+			y: 2.5d,
+			shape: "rsquare",
+			description: [
+				"The diesel generator produces about twice as much power per second as the coal generator.",
+				"It also accepts upgrades for faster or more efficient generation, unlike the coal generator."
+			],
+			dependencies: [I;247],
+			id: 252,
+			tasks: [{
+				id: 253,
+				type: "item",
+				item: "silents_mechanisms:diesel_generator"
+			}],
+			rewards: [
+				{
+					id: 274,
+					type: "item",
+					item: "silents_mechanisms:bismuth_ore",
+					count: 4
+				},
+				{
+					id: 275,
+					type: "item",
+					item: "silents_mechanisms:alloy_machine_frame"
+				}
+			]
+		},
+		{
+			x: 1.5d,
+			y: 2.5d,
+			shape: "rsquare",
+			description: ["Use the mixer to combine ethane and and water to produce polyethylene, one step closer to plastic."],
+			dependencies: [I;
+				247,
+				260
+			],
+			id: 254,
+			tasks: [{
+				id: 255,
+				type: "item",
+				item: "silents_mechanisms:mixer"
+			}],
+			rewards: [{
+				id: 276,
+				type: "item",
+				item: "silents_mechanisms:alloy_machine_frame"
+			}]
+		},
+		{
+			x: 1.5d,
+			y: 4.0d,
+			shape: "rsquare",
+			description: ["Solidify polyethylene to produce plastic pellets."],
+			dependencies: [I;254],
+			id: 256,
+			tasks: [{
+				id: 257,
+				type: "item",
+				item: "silents_mechanisms:solidifier"
+			}],
+			rewards: [{
+				id: 277,
+				type: "item",
+				item: "minecraft:ender_pearl",
+				count: 4
+			}]
+		},
+		{
+			x: 1.5d,
+			y: 1.0d,
+			shape: "rsquare",
+			description: ["You'll need a pump for automated oil refining, and to provide water for further processing steps."],
+			hide_dependency_lines: true,
+			dependencies: [I;231],
+			id: 260,
+			tasks: [{
+				id: 261,
+				type: "item",
+				item: "silents_mechanisms:pump"
+			}],
+			rewards: [{
+				id: 262,
+				type: "item",
+				item: "silents_mechanisms:empty_canister",
+				count: 8
+			}]
+		},
+		{
+			x: 0.0d,
+			y: 4.0d,
+			shape: "rsquare",
+			dependencies: [I;256],
+			id: 263,
+			tasks: [{
+				id: 264,
+				type: "item",
+				item: "silents_mechanisms:plastic_pellets"
+			}],
+			rewards: [
+				{
+					id: 278,
+					type: "item",
+					item: "minecraft:gold_ore",
+					count: 4
+				},
+				{
+					id: 279,
+					type: "item",
+					item: "silents_mechanisms:silver_ore",
+					count: 4
+				}
+			]
+		},
+		{
+			x: -1.5d,
+			y: 4.0d,
+			shape: "rsquare",
+			description: [
+				"You've finally produced plastic sheets!",
+				"Unfortunately they aren't used in many recipes.",
+				"",
+				"They can be used to craft machine upgrades though, and also for a portable pump."
+			],
+			dependencies: [I;263],
+			id: 265,
+			tasks: [{
+				id: 266,
+				type: "item",
+				item: "silents_mechanisms:plastic_sheet"
+			}],
+			rewards: [{
+				id: 281,
+				type: "item",
+				item: {
+					id: "silents_mechanisms:battery",
+					Count: true,
+					tag: {
+						Energy: 500000
+					}
+				},
+				count: 2
+			}]
+		},
+		{
+			x: -1.5d,
+			y: 5.5d,
+			shape: "rsquare",
+			description: [
+				"Now you can finally craft upgrade modules!",
+				"Unfortunately by this point they probably wont do you much good..."
+			],
+			dependencies: [I;265],
+			id: 267,
+			tasks: [{
+				id: 268,
+				type: "item",
+				item: "silents_mechanisms:upgrade_case"
+			}],
+			rewards: [
+				{
+					id: 282,
+					type: "item",
+					item: "minecraft:redstone_block"
+				},
+				{
+					id: 283,
+					type: "item",
+					item: "minecraft:glowstone"
+				},
+				{
+					id: 284,
+					type: "item",
+					item: "minecraft:lapis_block"
+				},
+				{
+					id: 285,
+					type: "item",
+					item: "minecraft:diamond_block"
+				},
+				{
+					id: 286,
+					type: "item",
+					item: "silents_mechanisms:silver_block"
+				},
+				{
+					id: 287,
+					type: "item",
+					item: "minecraft:gold_block"
+				},
+				{
+					id: 288,
+					type: "item",
+					item: "silents_mechanisms:platinum_block"
+				}
+			]
+		},
+		{
+			title: "Racks",
+			x: -1.5d,
+			y: -4.0d,
+			shape: "rsquare",
+			description: [
+				"These are just like the old Tinker's Construct drying/item racks.",
+				"You can use them to dry meats, convert rotten flesh to leather, or just to hang your tools."
+			],
+			dependencies: [I;208],
+			id: 269,
+			tasks: [{
+				id: 270,
+				type: "item",
+				title: "Any silents_mechanisms:drying_racks",
+				item: {
+					id: "itemfilters:tag",
+					Count: true,
+					tag: {
+						value: "silents_mechanisms:drying_racks"
+					}
+				}
+			}],
+			rewards: [{
+				id: 271,
+				type: "item",
+				item: "minecraft:rotten_flesh",
+				count: 4
+			}]
+		}
+	]
+}

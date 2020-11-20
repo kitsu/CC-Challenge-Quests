@@ -1,0 +1,1150 @@
+{
+	id: 74,
+	filename: "starting_out",
+	order_index: 1,
+	title: "The Challenge",
+	icon: "computercraft:computer_advanced",
+	default_quest_shape: "",
+	quests: [
+		{
+			x: 0.0d,
+			y: -31.0d,
+			shape: "circle",
+			description: [
+				"The challenge of this pack is to survive Minecraft while using ComputerCraft turtles for all hard labor.",
+				"So instead of punching wood you make a turtle log, and instead of crafting a pick and digging down or building up you write a program.",
+				"",
+				"You will be provided one computational companion to start with, but you can craft or be rewarded more as you progress.",
+				"Take extra care of this first turtle though, because you will need a diamond pick to create another miner.",
+				"",
+				"The pack does not impose arbitrary limits on you, but you should only use your hand for breaking things beside turtles, and avoid placing/breaking more than a couple blocks at a time.",
+				"It will be very tough in the first few days, but these quests will provide tips and resources to help you along."
+			],
+			id: 75,
+			tasks: [{
+				id: 76,
+				type: "checkmark",
+				title: "The Challenge",
+				icon: "minecraft:compass"
+			}],
+			rewards: [
+				{
+					id: 77,
+					type: "item",
+					item: {
+						id: "computercraft:turtle_advanced",
+						Count: true,
+						tag: {
+							RightUpgrade: "minecraft:diamond_pickaxe"
+						}
+					}
+				},
+				{
+					id: 78,
+					type: "item",
+					item: "minecraft:coal"
+				}
+			]
+		},
+		{
+			title: "Getting Wood",
+			icon: "minecraft:oak_log",
+			x: 0.0d,
+			y: -29.5d,
+			shape: "rsquare",
+			description: [
+				"As usual the first thing you should do in a new world is go logging.",
+				"Unlike usual you shouldn't start punching trees though.",
+				"",
+				"You have an advanced piece of technology at your disposal which can easily log entire trees (or forests!) with just a little effort.",
+				"Go set your new companion against a trunk and write a program to mine one block, move forward, and mine upward while logs are above.",
+				"(Your turtle will need fuel to move, place the rewarded coal in the outlined slot and `refuel`)"
+			],
+			dependencies: [I;75],
+			hide_text_until_complete: false,
+			id: 79,
+			tasks: [{
+				id: 80,
+				type: "item",
+				title: "Any minecraft:logs",
+				item: {
+					id: "itemfilters:tag",
+					Count: true,
+					tag: {
+						value: "minecraft:logs"
+					}
+				},
+				count: 16L,
+				consume_items: false,
+				only_from_crafting: false
+			}],
+			rewards: [{
+				id: 81,
+				type: "item",
+				item: "minecraft:torch",
+				count: 8
+			}]
+		},
+		{
+			disable_toast: true,
+			x: -1.5d,
+			y: -30.0d,
+			shape: "gear",
+			description: [
+				"To play along with this pack you will need to write programs in the Lua language.",
+				"Lua is a small scripting language generally used embedded in other applications.",
+				"",
+				"There are plenty of Lua guides and tutorials available online, including the language specification (recommended!).",
+				"These quests will not attempt to teach the language, but these optional gear quests will provide tips focused around ComputerCraft turtles.",
+				"",
+				"Note: in these quests code and commands will be wrapped in `back-quotes` (graves accent marks)."
+			],
+			dependencies: [I;75],
+			hide_text_until_complete: false,
+			optional: true,
+			id: 82,
+			tasks: [{
+				id: 83,
+				type: "checkmark",
+				title: "Programming?!",
+				icon: {
+					id: "computercraft:disk",
+					Count: true,
+					tag: {
+						Color: 1118481
+					}
+				},
+				disable_toast: true
+			}],
+			rewards: [{
+				id: 84,
+				type: "item",
+				item: "minecraft:bread",
+				count: 2
+			}]
+		},
+		{
+			disable_toast: true,
+			x: 1.5d,
+			y: -30.0d,
+			shape: "gear",
+			description: [
+				"Even before writing your first program you can already control your turtle.",
+				"When you first interact with a turtle you will see the ComputerCraft shell.",
+				"You can use the shell to browse and edit the turtle's files, and execute programs.",
+				"",
+				"Turtles come with a set of built-in programs for issuing 'immediate' commands.",
+				"The first you will need is `refuel`, which will consume the fuel in the active slot to power the turtle (allow movement).",
+				"The `refuel` command can take a numeric argument to indicate how much fuel to consume, and `refuel 0` will print the current fuel level.",
+				"",
+				"Next you can use the `go` command to drive the turtle.",
+				"Going requires a direction, and an optional distance.",
+				"You can also string multiple directions together to make multiple moves.",
+				"For example `go up forward 5` (there are also abbreviations, like 'fd' for 'forward')."
+			],
+			dependencies: [I;75],
+			hide_text_until_complete: false,
+			optional: true,
+			id: 85,
+			tasks: [{
+				id: 86,
+				type: "checkmark",
+				title: "Interactive",
+				icon: {
+					id: "computercraft:disk",
+					Count: true,
+					tag: {
+						Color: 13388876
+					}
+				},
+				disable_toast: true
+			}],
+			rewards: [{
+				id: 87,
+				type: "item",
+				item: {
+					id: "minecraft:stone_pickaxe",
+					Count: true,
+					tag: {
+						Damage: 0,
+						display: {
+							Name: '{"text":"Turtle Breaker"}'
+						}
+					}
+				}
+			}]
+		},
+		{
+			title: "Craft Craft",
+			x: 0.0d,
+			y: -28.0d,
+			shape: "rsquare",
+			description: [
+				"You will still need to do plenty of crafting in this challenge.",
+				"A mod is included that emulates the crafting station from Tinker's Construct.",
+				"",
+				"As a reward you will be gifted a crafty turtle (turtle with attached crafting table).",
+				"They are difficult to use well, but they can automate your repetitive crafting tasks."
+			],
+			dependencies: [I;79],
+			id: 88,
+			tasks: [{
+				id: 89,
+				type: "item",
+				item: "craftingstation:crafting_station_slab"
+			}],
+			rewards: [{
+				id: 90,
+				type: "item",
+				item: {
+					id: "computercraft:turtle_advanced",
+					Count: true,
+					tag: {
+						RightUpgrade: "minecraft:crafting_table"
+					}
+				}
+			}]
+		},
+		{
+			title: "Hot Topic",
+			x: 0.0d,
+			y: -26.5d,
+			shape: "rsquare",
+			description: [
+				"Once you've gotten wood for fuel it will be more efficient to convert it to charcoal.",
+				"To do so you'll need a furnace, and thus cobble stone.",
+				"",
+				"Write a mining program to dig some stone, if you're clever you can use it to make a hidey-hole for your stuff.",
+				"Don't worry too much about digging down yet, there is another quest coming up."
+			],
+			dependencies: [I;88],
+			id: 91,
+			tasks: [{
+				id: 92,
+				type: "item",
+				item: "minecraft:furnace"
+			}],
+			rewards: [{
+				id: 93,
+				type: "item",
+				item: "minecraft:white_wool",
+				count: 3
+			}]
+		},
+		{
+			disable_toast: true,
+			x: 1.5d,
+			y: -28.0d,
+			shape: "gear",
+			description: [
+				"The crafty turtle can be operated with one command: `turtle.craft(n)`.",
+				"The optional argument 'n' determines how many items to craft, omit to craft as many as possible.",
+				"",
+				"In order for anything to be crafted the recipe must be laid out in the turtle's inventory.",
+				"The slots used don't matter, but there cannot be any extra blocks.",
+				"",
+				"The crafting outputs are placed in open inventory slots (thus preventing further crafting)."
+			],
+			dependencies: [I;88],
+			optional: true,
+			id: 94,
+			tasks: [{
+				id: 95,
+				type: "checkmark",
+				title: "Getting Crafty",
+				icon: {
+					id: "computercraft:turtle_advanced",
+					Count: true,
+					tag: {
+						RightUpgrade: "minecraft:crafting_table"
+					}
+				},
+				disable_toast: true
+			}],
+			rewards: [
+				{
+					id: 96,
+					type: "item",
+					item: "minecraft:bamboo"
+				},
+				{
+					id: 184,
+					type: "item",
+					item: "computercraft:speaker",
+					count: 4
+				}
+			]
+		},
+		{
+			x: -1.5d,
+			y: -28.0d,
+			shape: "gear",
+			description: [
+				"It is so inconvenient interrupting a programming session to keep from starving or stock up your turtle fuel.",
+				"Now that you have a spare turtle you can start automating mundane tasks like farming and smelting.",
+				"",
+				"Turtles can perform a surprising number of world interactions using `place[Up/Down]()`.",
+				"Using it with a hoe selected will till dirt one space below, and then you can `placeDown()` seeds to plant them.",
+				"",
+				"You can use `inspectDown()` to check the state of the crop, once the `state.age` is 7 or higher the wheat is grown.",
+				"You can then `placeDown()` with a hoe to harvest the wheat and `suckDown()` to collect the drops directly below the turtle.",
+				"",
+				"(Note: crops grow faster in alternating rows...)"
+			],
+			dependencies: [I;88],
+			optional: true,
+			id: 97,
+			tasks: [{
+				id: 98,
+				type: "checkmark",
+				title: "Automation",
+				icon: "minecraft:piston",
+				disable_toast: true
+			}],
+			rewards: [
+				{
+					id: 99,
+					type: "item",
+					item: "minecraft:wheat_seeds",
+					count: 9
+				},
+				{
+					id: 175,
+					type: "item",
+					item: "minecraft:carrot",
+					count: 9
+				},
+				{
+					id: 345,
+					type: "item",
+					item: "minecraft:potato",
+					count: 9
+				}
+			]
+		},
+		{
+			disable_toast: true,
+			x: -1.5d,
+			y: -26.5d,
+			shape: "gear",
+			description: [
+				"Turtles can interact with inventories, including furnaces, allowing automation without hoppers.",
+				"First place some fuel in a specific slot (16) and logs in another (1) and move the turtle above the furnace.",
+				"",
+				"Use `select(1)` for logs and `dropDown()` to insert them in the top of the furnace.",
+				"Next move back and down, `select(16)` and `drop()` to insert fuel in the back.",
+				"Finally move down and forward, `suckUp()` to pull out the charcoal.",
+				"",
+				"Smelting takes time, so you will need to `sleep(seconds)` until cooking is done.",
+				"You can inspect the furnace, but you can only see if it is lit, you can also count the logs and charcoal to know when its done.",
+				"",
+				"A better option is to build multiple furnaces, so while one is smelting you can fill and fuel the next.",
+				"You can also drop and suck from chests to grab logs and drop off charcoal..."
+			],
+			dependencies: [I;91],
+			optional: true,
+			id: 126,
+			tasks: [{
+				id: 127,
+				type: "checkmark",
+				title: "Charcoal",
+				icon: "minecraft:charcoal",
+				disable_toast: true
+			}],
+			rewards: [
+				{
+					id: 132,
+					type: "item",
+					item: "minecraft:barrel"
+				},
+				{
+					id: 133,
+					type: "item",
+					item: "minecraft:furnace",
+					count: 4
+				}
+			]
+		},
+		{
+			x: 1.5d,
+			y: -26.5d,
+			shape: "gear",
+			description: [
+				"Cows produce milk, leather, and steak, which are all useful resources.",
+				"The Quark mod adds a trough for breeding animals, and turtles can fill the trough using `dropDown` from one block above.",
+				"",
+				"Turtles don't interact well with entities, so you're better off butchering manually.",
+				"Eventually your farm surplus should allow you to breed enough that a axe turtle can take over culling.",
+				"(by only `attack`ing from one block above ground you will avoid calfs)",
+				"",
+				"You can also have a turtle collect milk with buckets by `place`ing them against cows."
+			],
+			dependencies: [I;91],
+			optional: true,
+			id: 128,
+			tasks: [{
+				id: 129,
+				type: "checkmark",
+				title: "Ranching",
+				icon: "minecraft:leather",
+				disable_toast: true
+			}],
+			rewards: [
+				{
+					id: 130,
+					type: "item",
+					item: {
+						id: "minecraft:iron_sword",
+						Count: true,
+						tag: {
+							Damage: 0,
+							display: {
+								Name: '{"text":"Cattle Prod"}'
+							}
+						}
+					}
+				},
+				{
+					id: 131,
+					type: "item",
+					item: "minecraft:milk_bucket"
+				}
+			]
+		},
+		{
+			x: 0.0d,
+			y: -25.0d,
+			shape: "gear",
+			description: [
+				"By this time you should have several utility programs written, and if you've followed the side quests you may have some farms set up.",
+				"It may have taken you a couple Minecraft days, or several RL days, either way it's an achievement.",
+				"",
+				"By now you can probably see how powerful and versatile turtles can be, and how they can handle many of your menial chores.",
+				"If you've logged out or gone exploring while your turtle was running you might have discovered a problem though:",
+				"Turtles (and computers in general) stop running when they are unloaded, and restart when they are reloaded.",
+				"",
+				"This means all your farms and automation will break as soon as you wander too far away, but there are some possible workarounds.",
+				"First you can create a file named 'startup.lua' in the root folder and it will be run when the computer boots.",
+				"Your programs can also write their state to a file so they can recover from stoppage.",
+				"Eventually you can setup a turtle GPS to help them find their location and way home too.",
+				"",
+				"Speaking of home - your programs should have a well defined home position, and if possible they should `sleep` there frequently.",
+				"This makes it easier to stop and restart them, and improves the chance they will reboot in the right place to proceed...",
+				"",
+				"It wont help with restarts, but there is a chunkloader in the pack that can keep things running while you are away."
+			],
+			dependencies: [I;91],
+			hide: true,
+			id: 135,
+			tasks: [{
+				id: 136,
+				type: "checkmark",
+				title: "Fatal Flaw",
+				icon: "minecraft:skeleton_skull"
+			}],
+			rewards: [
+				{
+					id: 137,
+					type: "item",
+					item: "minecraft:bone",
+					count: 2
+				},
+				{
+					id: 347,
+					type: "item",
+					item: "computercraft:disk_drive"
+				},
+				{
+					id: 348,
+					type: "item",
+					item: {
+						id: "computercraft:disk",
+						Count: true,
+						tag: {
+							Color: 1118481
+						}
+					}
+				}
+			]
+		},
+		{
+			x: 0.0d,
+			y: -32.0d,
+			description: [
+				"Here are a few tips for operating your computers (and turtles).",
+				"+ Use `ls` to list files/directories",
+				"+ Use `cd` to change directory, `mkdir` to create one and `rm` to delete",
+				"+ Use `edit name` to create a lua file in the current dir",
+				"+ Run an interactive Lua prompt with `lua`",
+				"+ Use up/down arrows to navigate previous commands and autocompletes",
+				"+ Press-and-hold `ctrl-t` to force terminate a running program",
+				"+ There is a built-in help command"
+			],
+			dependencies: [I;75],
+			optional: true,
+			id: 138,
+			tasks: [{
+				id: 139,
+				type: "checkmark",
+				title: "Tips & Tricks",
+				icon: "quark:soul_compass",
+				disable_toast: true
+			}],
+			rewards: [{
+				id: 141,
+				type: "item",
+				item: "minecraft:apple",
+				count: 4
+			}]
+		},
+		{
+			title: "Time to Mine",
+			icon: "minecraft:bedrock",
+			x: 1.5d,
+			y: -23.5d,
+			shape: "rsquare",
+			description: [
+				"Your next goal will be to build more computers and turtles to improve your automation, and many of the resources required to build computers come from the bottom of the world.",
+				"There are many kinds of turtle quarries, but at this stage what you need is something simple and safe for your one miner.",
+				"",
+				"The most basic quarry is the ore bore, a program that digs straight down and returns straight back up.",
+				"The mining loop is `digDown`, descend, check all four sides (mining any ore), repeat.",
+				"",
+				"Despite its simplicity there are some fine details to think about:",
+				"+ You need to maintain the fuel level without burning all the coal you mine",
+				"+ You may mine more blocks than your turtle's inventory can hold",
+				"+ When you hit bedrock, air, or fluids `digDown` will return false",
+				"+ To return to the surface you need to know how deep you've gone",
+				"+ You can see a block's tags w/ `inspect` (look for 'forge:ores')",
+				"+ Sealing the hole w/ cobble prevents falling and marks where you've been",
+				"+ Turtles are immune to nearly everything, including lava"
+			],
+			dependencies: [I;135],
+			id: 142,
+			tasks: [{
+				id: 143,
+				type: "item",
+				item: "minecraft:redstone",
+				count: 4L
+			}],
+			rewards: [{
+				id: 145,
+				type: "item",
+				item: "minecraft:diamond"
+			}]
+		},
+		{
+			title: "Tree Farm",
+			x: -1.5d,
+			y: -23.5d,
+			shape: "rsquare",
+			description: [
+				"Turtles are fairly efficient running on coal/charcoal, but the constant need to produce fuel can take you away from programming.",
+				"With a little work you can setup an automatic tree farm to collect wood for charcoal.",
+				"",
+				"Turtles can place saplings, and inspect blocks to distinguish saplings from logs, all you need is to plan your farm.",
+				"A grid of trees 3-5 blocks apart should work, you can plot a winding path between the trunks.",
+				"",
+				"What kind of tree you grow also matters: oaks aren't great since sometimes they branch, and acacia are terrible.",
+				"If you understand Minecraft water you can put your farm over streams to catch saplings, sticks, and apples for collection too.",
+				"",
+				"Last you just have to setup a wood dropoff, fuel depot, and a sapling pickup for a self-sustaining farm."
+			],
+			dependencies: [I;135],
+			id: 146,
+			tasks: [{
+				id: 147,
+				type: "item",
+				title: "Any minecraft:logs",
+				item: {
+					id: "itemfilters:tag",
+					Count: true,
+					tag: {
+						value: "minecraft:logs"
+					}
+				},
+				count: 128L
+			}],
+			rewards: [{
+				id: 154,
+				type: "choice",
+				icon: "minecraft:oak_sapling",
+				table: 0
+			}]
+		},
+		{
+			title: "Item Transport",
+			x: 0.0d,
+			y: -23.5d,
+			shape: "rsquare",
+			description: [
+				"Congratulations on crafting your first turtle!",
+				"",
+				"You may have noticed there are no tubes, conveyors, or other transportation in the pack.",
+				"The intention is to use turtles for all your item/fluid transport (with a little help from vanilla mechanics).",
+				"",
+				"If you have auto-smelting working, and once you complete the tree farm quest, the next step is to connect the two for an infinite charcoal loop.",
+				"Starting with the tree farm you can start creating charcoal fuel depots to keep each of your farms running too.",
+				"",
+				"For now it's easiest to just hard-code the path between the tree farm and charcoal plant, but in the future you'll be able to build self-locating stockpiles.",
+				"If you're tricky you can even use the surplus sticks and saplings from the farm to power your smeltery."
+			],
+			dependencies: [I;135],
+			id: 155,
+			tasks: [{
+				id: 156,
+				type: "item",
+				title: "Any computercraft:turtle",
+				item: {
+					id: "itemfilters:tag",
+					Count: true,
+					tag: {
+						value: "computercraft:turtle"
+					}
+				},
+				only_from_crafting: true
+			}],
+			rewards: [
+				{
+					id: 157,
+					type: "item",
+					item: "minecraft:barrel",
+					count: 4
+				},
+				{
+					id: 158,
+					type: "item",
+					item: "minecraft:diamond"
+				}
+			]
+		},
+		{
+			title: "Cobble Gen",
+			icon: "minecraft:cobblestone",
+			x: -3.0d,
+			y: -23.5d,
+			shape: "rsquare",
+			description: [
+				"After wood the next most important renewable resource is stone in all its forms.",
+				"All you need is a vanilla cobble gen and a mining turtle and you can produce infinite stone.",
+				"(in a four-wide 1 deep ditch dig down 1 block next to one end then place water in that end, place lava at the other end)",
+				"",
+				"If you pair your cobble gen with another smeltery you can also create clean stone, and a crafty turtle can make stone bricks.",
+				"Though your quarry will be producing some stone a steady supply will be useful later..."
+			],
+			dependencies: [I;146],
+			id: 159,
+			tasks: [{
+				id: 160,
+				type: "item",
+				item: "minecraft:cobblestone",
+				count: 128L
+			}],
+			rewards: [{
+				id: 205,
+				type: "item",
+				item: {
+					id: "minecraft:diamond_pickaxe",
+					Count: true,
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		},
+		{
+			title: "Automated Storage",
+			x: 3.0d,
+			y: -23.5d,
+			shape: "rsquare",
+			description: [
+				"Now that you've started mining you are going to have an increasing variety and quantity of blocks to keep track of.",
+				"With enough effort (and space) you can create a computerized storage system rivalling the capabilities of Applied Energistics.",
+				"",
+				"This will be a long running project, but you can get started on an early prototype right away.",
+				"Start by building an array of barrels or chests, and using `turtle.getItemDetail` to place specific items in their place.",
+				"",
+				"To keep organized at the beginning you can either pull and inspect one item from each container before depositing, or write to a file where each new item type gets stored.",
+				"You can extend the system by setting up a dedicated computer to wirelessly track and coordinate transactions, and adding crafty turtles and recipes for on-demand auto-crafting."
+			],
+			dependencies: [I;142],
+			id: 161,
+			tasks: [
+				{
+					id: 163,
+					type: "item",
+					item: "minecraft:gold_ore"
+				},
+				{
+					id: 164,
+					type: "item",
+					item: "minecraft:iron_ore"
+				},
+				{
+					id: 165,
+					type: "item",
+					item: "silents_mechanisms:copper_ore"
+				}
+			],
+			rewards: [{
+				id: 166,
+				type: "item",
+				item: "computercraft:wireless_modem_normal",
+				count: 2
+			}]
+		},
+		{
+			title: "Automated Mining",
+			x: 1.5d,
+			y: -22.0d,
+			shape: "rsquare",
+			description: [
+				"With any luck you hit redstone, iron, or even diamond with your first bore hole.",
+				"The next step once you can reliably get down and back up is to automatically repeat the process.",
+				"",
+				"Just blindly punching holes will waste a lot of time and fuel, luckily there's an optimal pattern for boring.",
+				'It is called the "knight\'s move" after the knight in chess, where you either move one forward and two to the side or two forward and one to the side.',
+				"",
+				"When you bore you dig out all the ores on four sides, so one move in any direction will overlap what you've already done.",
+				"The trick with knight's move is controlling where you mine, it is possible to remain in an area by alternating left/right and short/long jumps.",
+				"(test out some patterns to find a sequence that doesn't overlap)"
+			],
+			dependencies: [I;142],
+			id: 167,
+			tasks: [{
+				id: 168,
+				type: "item",
+				item: "minecraft:iron_ingot"
+			}],
+			rewards: [
+				{
+					id: 169,
+					type: "item",
+					item: "minecraft:diamond"
+				},
+				{
+					id: 358,
+					type: "item",
+					item: {
+						id: "enderchests:ender_chest",
+						Count: true,
+						tag: {
+							owner: "all",
+							code: "000"
+						}
+					},
+					count: 2
+				}
+			]
+		},
+		{
+			title: "Other Farms",
+			x: -1.5d,
+			y: -22.0d,
+			shape: "rsquare",
+			description: [
+				"Turtles can also farm other renewable resources, like sugar cane, bamboo, cactus, etc.",
+				"Cane is good for paper, which is a villager trade and useful for many things.",
+				"",
+				"Your turtle will need some tool to break these crops, a shovel costs the fewest diamonds, though it isn't the most useful.",
+				"You can use `equipLeft/Right` to add an unused tool to any turtle, swapping it with anything already equipped.",
+				"(this includes crafting tables)"
+			],
+			dependencies: [I;146],
+			id: 170,
+			tasks: [{
+				id: 172,
+				type: "item",
+				item: "minecraft:sugar_cane",
+				count: 64L
+			}],
+			rewards: [
+				{
+					id: 173,
+					type: "item",
+					item: "minecraft:pumpkin_seeds",
+					count: 4
+				},
+				{
+					id: 174,
+					type: "item",
+					item: "minecraft:melon_seeds",
+					count: 4
+				}
+			]
+		},
+		{
+			title: "Automated Building",
+			x: -3.0d,
+			y: -22.0d,
+			shape: "rsquare",
+			description: [
+				"If you've been sticking to the quest line you've been living in a hole for a while now.",
+				"Since you've got plenty of building blocks now you should put your turtles to work.",
+				"",
+				"Placing blocks instead of breaking them can be tricky, try starting with a wall builder.",
+				"You can be more efficient by making an 'S' pattern, placing above while moving down and bellow while moving up.",
+				"Another trick is to face the edge of the wall and move backward while `place`ing new blocks."
+			],
+			dependencies: [I;159],
+			id: 176,
+			tasks: [{
+				id: 177,
+				type: "item",
+				item: "minecraft:stone_bricks",
+				count: 64L
+			}],
+			rewards: [{
+				id: 206,
+				type: "item",
+				item: "minecraft:glass",
+				count: 64
+			}]
+		},
+		{
+			title: "Tunneling",
+			x: 3.0d,
+			y: -22.0d,
+			shape: "rsquare",
+			description: [
+				"The boring quarry is effective, but why let the turtles have all the fun?",
+				"There's plenty below ground beside rocks, you just need a safe way to get there.",
+				"",
+				"Write a program to dig a staircase down, bonus points for filling in gaps and returning to the surface.",
+				"With any luck you'll hit a dungeon, mineshaft, or at least a nice cave to explore.",
+				"(I recommend a three-wide shaft with plenty of headroom)",
+				"",
+				"If you can make it down to y-level 12 you can write a tunnel bore to hunt for diamonds more efficiently.",
+				"Just remember to program it to fill (lava) holes, and to come back to unload."
+			],
+			dependencies: [I;167],
+			id: 178,
+			tasks: [
+				{
+					id: 179,
+					type: "item",
+					item: "minecraft:oak_fence"
+				},
+				{
+					id: 180,
+					type: "item",
+					item: "minecraft:oak_planks"
+				},
+				{
+					id: 181,
+					type: "item",
+					item: "minecraft:oak_fence"
+				}
+			],
+			rewards: [
+				{
+					id: 349,
+					type: "item",
+					item: "endertendril:ender_tendril_seed"
+				},
+				{
+					id: 350,
+					type: "item",
+					item: "ringsofascension:ring_regeneration"
+				},
+				{
+					id: 359,
+					type: "item",
+					item: {
+						id: "enderchests:ender_pouch",
+						Count: true,
+						tag: {
+							open: false
+						}
+					}
+				}
+			]
+		},
+		{
+			icon: "minecraft:composter",
+			disable_toast: true,
+			x: -1.5d,
+			y: -25.0d,
+			shape: "gear",
+			description: [
+				"Your programs can take input arguments when they are run e.g. `mine 9 9` to mine a 9x9 space.",
+				"This kind of parameterization lets you write one program that works in many situations.",
+				"",
+				"To access the arguments simply assign a special value to a variable: `local tArgs = {{...}}`.",
+				"Your variable will then contain an array of arguments you can access like `tArgs[1]` for the first arg.",
+				"",
+				"You can also unpack the array directly into variables: `local x, y, z = ...`."
+			],
+			dependencies: [I;135],
+			optional: true,
+			id: 185,
+			tasks: [{
+				id: 186,
+				type: "checkmark",
+				title: "Arguments"
+			}],
+			rewards: [{
+				id: 189,
+				type: "item",
+				item: "metalbarrels:wood_to_iron"
+			}]
+		},
+		{
+			title: "Programs in Programs",
+			icon: "minecraft:tropical_fish_bucket",
+			disable_toast: true,
+			x: 1.5d,
+			y: -25.0d,
+			shape: "gear",
+			description: [
+				"There is a limit to how complex a program you can make work reliably, the complexity you can handle will increase with experience, but there are other ways to manage it.",
+				"",
+				"One simple way is to encapsulate logic into functions, so you can name a concept and avoid repeating yourself.",
+				"ComputerCraft also provides an additional layer above functions: the shell.",
+				"",
+				"ComputerCraft provides a shell API that allows you to execute one program from within another.",
+				"By using `shell.run('program', arg1, etc)` your program will pause while the indicated program takes its place, then resume once it exits.",
+				"(`shell.run` returns true if the program ran successfully)",
+				"",
+				"The reason this is useful is that you can make a simple parameterized script that is reliable, and use it in a larger program.",
+				"For instance you can reuse the basic logging program from within a tree farm program.",
+				"",
+				"This sort of wrapping can also provide a layer of fault tolerance to fallible programs.",
+				"For instance you could wrap your mining program so even if it has an error your turtle will return to the surface."
+			],
+			dependencies: [I;135],
+			optional: true,
+			id: 187,
+			tasks: [{
+				id: 188,
+				type: "checkmark",
+				title: "Programs Running Programs"
+			}],
+			rewards: [{
+				id: 190,
+				type: "item",
+				item: "elevatorid:elevator_white",
+				count: 2
+			}]
+		},
+		{
+			disable_toast: true,
+			x: 0.0d,
+			y: -22.0d,
+			shape: "gear",
+			description: [
+				"In addition to functions, parameterized programs, and running one program from another Lua provides code sharing through modules.",
+				"Modules allow you to write code once and reuse it in multiple programs.",
+				"",
+				"A module is a regular lua file that returns a table, you put your reusable functions in that table.",
+				"To use a module in your program just assign the result of requiring it to a variable: `local foo = require('foo')`.",
+				"",
+				"Require uses a module search path to find your code, starting by looking for 'name.lua' in the current directory, then for './name/init.lua', then deeper into the rom folders and elsewhere.",
+				"Require doesn't understand path expressions, but periods are converted to slashes, so to require a module from the 'foo' folder you can use `require('foo.name')`."
+			],
+			dependencies: [I;135],
+			optional: true,
+			id: 191,
+			tasks: [{
+				id: 192,
+				type: "checkmark",
+				title: "Modular Code",
+				icon: {
+					id: "computercraft:disk",
+					Count: true,
+					tag: {
+						Color: 5744206
+					}
+				}
+			}],
+			rewards: [{
+				id: 193,
+				type: "item",
+				item: "minecraft:comparator",
+				count: 8
+			}]
+		},
+		{
+			disable_toast: true,
+			x: -3.0d,
+			y: -25.0d,
+			shape: "gear",
+			description: [
+				"Editing programs in modern ComputerCraft with advanced computers is pretty ok, with syntax highlighting and auto-complete.",
+				"Still the experience is rough when compared to a real programmer's editor.",
+				"",
+				"Luckily you can edit the files on your ComputerCraft computers outside of Minecraft in any editor you choose.",
+				"The tricky part is figuring out where your world save is stored, and which computer is which.",
+				"",
+				"If you are using MultiMC there is an 'instance folder' button, the Twitch launcher also has a similar option hidden in a dropdown.",
+				"Once in the '.minecraft' folder go to 'saves/yourWorld/computercraft/computer' and you will see a list of numbered folders.",
+				"",
+				"Once a computer/turtle is placed it will be assigned a number which can be seen if you pick it up.",
+				"You can also use the `id` command to see the computer's number, even if you use `label` to name your computer.",
+				"",
+				"From the correct folder you can edit lua files even while you are playing and the changes will update instantly.",
+				"I would recommend VSCode as a decent editor: it even has some extensions specifically for ComputerCraft, including an imbedded window for the CraftOS emulator."
+			],
+			dependencies: [I;185],
+			optional: true,
+			id: 196,
+			tasks: [{
+				id: 197,
+				type: "checkmark",
+				title: "External Editing",
+				icon: "computercraft:printed_book",
+				disable_toast: true
+			}],
+			rewards: [{
+				id: 200,
+				type: "item",
+				item: "minecraft:ender_chest"
+			}]
+		},
+		{
+			title: "GPS",
+			icon: "computercraft:wireless_modem_advanced",
+			disable_toast: true,
+			x: 3.0d,
+			y: -25.0d,
+			shape: "gear",
+			description: [
+				"The ultimate solution to controlling and coordinating your turtles is a Global Positioning System (GPS).",
+				"ComputerCraft comes with some utilities for computing location between wireless transceivers based on distances from base stations.",
+				"",
+				"Luckily you don't need to put your GPS constellation in orbit (though height does impact range), any handful of wireless capable computers will do.",
+				"Specifically you'll need 4 computers and 4 wireless modems, and a way to find you coordinates (minimap or f3).",
+				"",
+				"For best results you need to place the computers high up, at least 5 blocks apart, and so each computer has a different x, y, and z coordinates.",
+				"Place each computer, then shift-rmb to place a modem on it, then stand on the computer and record your coords.",
+				"",
+				"Once you have the coords edit the computer's startup file and type:",
+				"`shell.run('gps', 'host', x, y, z)` where x, y, z are the coords (minus 1 on the y).",
+				"",
+				"Once you've saved the GPS host startup for each computer (and restarted them) you can then test with another wireless computer.",
+				"From any wireless computer/turtle type `gps locate`  to try getting its coords (there is also an API for us in programs).",
+				"",
+				"One upgrade you can make to the system is swapping the wireless modems for ender modems.",
+				"Ender modems have unlimited range, unlike the normal wireless (you should also chunkload the hosts)."
+			],
+			dependencies: [I;161],
+			optional: true,
+			id: 198,
+			tasks: [{
+				id: 346,
+				type: "item",
+				title: "Any computercraft:computer",
+				item: {
+					id: "itemfilters:tag",
+					Count: true,
+					tag: {
+						value: "computercraft:computer"
+					}
+				}
+			}],
+			rewards: [{
+				id: 201,
+				type: "item",
+				item: "computercraft:wireless_modem_normal",
+				count: 8
+			}]
+		},
+		{
+			disable_toast: true,
+			x: 0.0d,
+			y: -20.5d,
+			shape: "gear",
+			description: [
+				"Even after you've completed all the quests there's still more to do.",
+				"Getting here you've most likely had to do some research, at least on the Lua language.",
+				"Now you should go look through the CC:Tweaked API docs for more ideas.",
+				"",
+				"Check out the Redstone API for interacting with vanilla machines.",
+				"Checkout Shell and OS for more control over your systems.",
+				"The fs and io libraries are for reading/writing files and streams.",
+				"Then there are all the terminal and graphic APIs.",
+				"",
+				"There are also peripherals like monitors, speakers, wired modems to play with.",
+				"The latest version even allows `peripheral.wrap`ing vanilla items like chests and furnaces."
+			],
+			dependencies: [I;191],
+			optional: true,
+			id: 202,
+			tasks: [{
+				id: 203,
+				type: "checkmark",
+				title: "And So Much More",
+				icon: "minecraft:diamond_ore",
+				disable_toast: true
+			}],
+			rewards: [{
+				id: 204,
+				type: "item",
+				item: "weirdinggadget:weirding_gadget"
+			}]
+		},
+		{
+			x: 4.5d,
+			y: -23.5d,
+			shape: "rsquare",
+			description: [
+				"Your mining turtle can insta-mine obsidian, which is useful for getting to the nether.",
+				"One option for finding obsidian to mine is to place a water source above your turtle before running the bore program.",
+				"",
+				"If your turtle happens to hit lava it will be converted, remember to add code for mining `minecraft:obsidian` to your side checks.",
+				"You may want to add a `digUp` to your return trip too, in case of a spontaneous cobble gen."
+			],
+			dependencies: [I;161],
+			id: 351,
+			tasks: [{
+				id: 352,
+				type: "item",
+				item: "minecraft:obsidian",
+				count: 2L
+			}],
+			rewards: [{
+				id: 353,
+				type: "item",
+				item: "minecraft:obsidian",
+				count: 8
+			}]
+		},
+		{
+			title: "Clearing and Filling",
+			icon: "minecraft:grass_block",
+			x: -4.5d,
+			y: -23.5d,
+			shape: "rsquare",
+			description: [
+				"One very useful aid to building is a clearing or leveling program.",
+				"The idea is to travel over/through an area digging any blocks at/above the starting level, and placing filler blocks in any voids.",
+				"",
+				"One simple way to set this up is to have two nested for loops: one for y/column the other for x/row.",
+				"The tricky part is zig-zagging at the end of each column while moving in a consistent direction.",
+				"",
+				"There is a math trick that can help: many programming languages provide a 'modulo' operator which returns the 'remainder after division'.",
+				"A better way to think about it is that modulo cycles numbers.",
+				"",
+				"In Lua modulo is `%`, and used like `5%4` (which would equal 4).",
+				"To get a feel for it try this at a Lua prompt: `for i=1,10 do print(i..'%3='..(i%3)) end`, note how the values cycle 0-1-2.",
+				"",
+				"For turning you can just check `if y%2 == 0 then` turn left `else` turn right.",
+				"Checking `%2` will alternate between 0 and 1 every y value, and doing turn fwd turn in alternate directions will move in a zig-zag."
+			],
+			dependencies: [I;159],
+			id: 355,
+			tasks: [{
+				id: 356,
+				type: "item",
+				item: "minecraft:dirt",
+				count: 128L
+			}],
+			rewards: [{
+				id: 360,
+				type: "item",
+				item: "waystones:waystone",
+				count: 2
+			}]
+		}
+	]
+}

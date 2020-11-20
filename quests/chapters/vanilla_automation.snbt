@@ -1,0 +1,391 @@
+{
+	id: 289,
+	filename: "vanilla_automation",
+	order_index: 3,
+	title: "Vanilla Automation",
+	icon: "minecraft:sticky_piston",
+	default_quest_shape: "",
+	quests: [
+		{
+			x: 0.0d,
+			y: -0.5d,
+			description: [
+				"While turtles are better in almost every way, vanilla automation can be convenient, especially while your turtle army is small.",
+				"These quests will facilitate you use of vanilla plus solutions to automation problems.",
+				"",
+				"Modded Minecrafters might not know, but there is a hopper minecart which can pickup drops, including above it through some blocks.",
+				"Hoppers below its tracks can then pull out (and can generate comparator signals to lock the track)."
+			],
+			dependencies: [I;79],
+			id: 292,
+			tasks: [{
+				id: 293,
+				type: "checkmark",
+				title: "The Old Ways",
+				icon: "minecraft:lever",
+				disable_toast: true
+			}],
+			rewards: [
+				{
+					id: 294,
+					type: "item",
+					item: "minecraft:powered_rail",
+					count: 9
+				},
+				{
+					id: 295,
+					type: "item",
+					item: "minecraft:rail",
+					count: 18
+				},
+				{
+					id: 296,
+					type: "item",
+					item: "minecraft:hopper_minecart"
+				}
+			]
+		},
+		{
+			x: 0.0d,
+			y: 1.0d,
+			shape: "rsquare",
+			description: [
+				"Redstone torches are the core of redstone logic, and components in crafting repeaters and comparators.",
+				"While normal redstone logic is of little use with computers available, comparators produce signals based on inventory contents, which can be used even by computers.",
+				"",
+				"The `redstone` library allows computers to read and write rs signals like those comparators produce.",
+				"Use `redstone.getAnalogOutput('side')` to read the signal on a side, and `setAnalogOutput('side', 0-15)` to set the output."
+			],
+			dependencies: [I;292],
+			id: 299,
+			tasks: [{
+				id: 301,
+				type: "item",
+				item: "minecraft:redstone_torch",
+				count: 2L
+			}],
+			rewards: [
+				{
+					id: 302,
+					type: "item",
+					item: "minecraft:repeater"
+				},
+				{
+					id: 303,
+					type: "item",
+					item: "minecraft:comparator"
+				}
+			]
+		},
+		{
+			x: -1.5d,
+			y: 2.5d,
+			shape: "rsquare",
+			description: [
+				"Pistons and sticky pistons are a staple of vanilla automation, pushing, pulling, or breaking blocks.",
+				"Turtles can do almost anything a piston can better, but they can't move things in the world.",
+				"",
+				"If you need to move things try combining pistons with computers using the redstone api."
+			],
+			dependencies: [I;299],
+			id: 304,
+			tasks: [{
+				id: 305,
+				type: "item",
+				item: "minecraft:piston"
+			}],
+			rewards: [
+				{
+					id: 306,
+					type: "item",
+					item: "minecraft:slime_ball",
+					count: 4
+				},
+				{
+					id: 307,
+					type: "item",
+					item: "quark:slime_in_a_bucket"
+				}
+			]
+		},
+		{
+			x: 0.0d,
+			y: 2.5d,
+			shape: "rsquare",
+			description: [
+				"Everybody knows hoppers, they are probably the most useful vanilla automation in modded Minecraft.",
+				"For the price of some iron and wood you can collect drops from the world, or move items around."
+			],
+			dependencies: [I;299],
+			id: 308,
+			tasks: [{
+				id: 309,
+				type: "item",
+				item: "minecraft:hopper"
+			}],
+			rewards: [{
+				id: 310,
+				type: "item",
+				item: "minecraft:minecart"
+			}]
+		},
+		{
+			x: 1.5d,
+			y: 2.5d,
+			shape: "rsquare",
+			description: [
+				"Rails provide surprisingly expensive and complex item transport to vanilla.",
+				"By combining powered rails, comparators, hoppers, and chest/hopper carts you can automate bulk transport, maybe freeing a turtle for other work."
+			],
+			dependencies: [I;299],
+			id: 311,
+			tasks: [{
+				id: 312,
+				type: "item",
+				item: "minecraft:rail",
+				only_from_crafting: true
+			}],
+			rewards: [
+				{
+					id: 313,
+					type: "item",
+					item: "minecraft:powered_rail",
+					count: 18
+				},
+				{
+					id: 314,
+					type: "item",
+					item: "minecraft:detector_rail",
+					count: 4
+				},
+				{
+					id: 315,
+					type: "item",
+					item: "minecraft:activator_rail",
+					count: 4
+				},
+				{
+					id: 316,
+					type: "item",
+					item: "minecraft:rail",
+					count: 16
+				}
+			]
+		},
+		{
+			x: 0.0d,
+			y: 4.0d,
+			shape: "rsquare",
+			description: ["A Quark chute is like a dropper, except it has no interface and it drops straight down."],
+			dependencies: [I;308],
+			id: 317,
+			tasks: [{
+				id: 318,
+				type: "item",
+				item: "quark:chute"
+			}],
+			rewards: [{
+				id: 319,
+				type: "item",
+				item: "minecraft:hopper"
+			}]
+		},
+		{
+			x: -1.5d,
+			y: 1.0d,
+			shape: "rsquare",
+			description: [
+				"Droppers drop entities into the world when given a redstone signal, though they are a little random for automation.",
+				"They can also 'drop' into other inventories, and can be pointed in any direction."
+			],
+			dependencies: [I;299],
+			id: 320,
+			tasks: [{
+				id: 321,
+				type: "item",
+				item: "minecraft:dropper"
+			}],
+			rewards: [{
+				id: 324,
+				type: "item",
+				item: "minecraft:dropper",
+				count: 7
+			}]
+		},
+		{
+			x: 1.5d,
+			y: 1.0d,
+			shape: "rsquare",
+			description: [
+				"Dispensers were originally for arrow/fire charge traps, but they've gained a lot of features over the years.",
+				"When triggered by a redstone signal they will try to eject an item from a random filled slot in their inventory.",
+				"",
+				"Some special behavers added by vanilla: they can place or pickup fluids with a bucket, use shears on shearables, fire projectiles, and probably a couple more things.",
+				"The Quark mod also allows them to place blocks, including seeds onto farmland."
+			],
+			dependencies: [I;299],
+			id: 322,
+			tasks: [{
+				id: 323,
+				type: "item",
+				item: "minecraft:dispenser"
+			}],
+			rewards: [{
+				id: 357,
+				type: "item",
+				item: "minecraft:dispenser",
+				count: 7
+			}]
+		},
+		{
+			x: -3.0d,
+			y: 1.0d,
+			shape: "rsquare",
+			description: [
+				"One of the more useful recent additions to vanilla are the bubble columns generated by soul sand in water.",
+				"With these and flowing water vanilla players can finally build (very large) item pipes.",
+				"",
+				"Soul sand bubble columns push items and entities rapidly upward.",
+				"They also provide oxygen, so you can't drown riding a bubble elevator."
+			],
+			dependencies: [I;320],
+			id: 325,
+			tasks: [{
+				id: 326,
+				type: "item",
+				item: "minecraft:soul_sand"
+			}],
+			rewards: [
+				{
+					id: 327,
+					type: "item",
+					item: "minecraft:soul_sand",
+					count: 8
+				},
+				{
+					id: 328,
+					type: "item",
+					item: "minecraft:water_bucket"
+				}
+			]
+		},
+		{
+			x: 3.0d,
+			y: 1.0d,
+			shape: "rsquare",
+			description: [
+				"The counter point to the soul sand bubble column, in water magma blocks pull items and entities down (and provide oxygen).",
+				"Standing on these will also cause damage, though sneaking should neutralize the effect for players."
+			],
+			dependencies: [I;322],
+			id: 329,
+			tasks: [{
+				id: 330,
+				type: "item",
+				item: "minecraft:magma_block"
+			}],
+			rewards: [
+				{
+					id: 331,
+					type: "item",
+					item: "minecraft:magma_block",
+					count: 4
+				},
+				{
+					id: 332,
+					type: "item",
+					item: "minecraft:water_bucket"
+				}
+			]
+		},
+		{
+			x: -1.5d,
+			y: 4.0d,
+			shape: "rsquare",
+			description: [
+				"Slime blocks are useful in combinations with pistons, since adjacent blocks will stick to them.",
+				"They are used in combination with honey blocks for the modern vanilla 'flying machine' designs.",
+				"",
+				"Slime is also bouncy, and negates fall damage."
+			],
+			dependencies: [I;304],
+			id: 333,
+			tasks: [{
+				id: 334,
+				type: "item",
+				item: "minecraft:slime_block"
+			}],
+			rewards: [{
+				id: 335,
+				type: "item",
+				item: "minecraft:slime_block",
+				count: 4
+			}]
+		},
+		{
+			x: 1.5d,
+			y: 4.0d,
+			shape: "rsquare",
+			description: ["Honey works like slime blocks, except it is sticky and very hard to jump off of."],
+			dependencies: [I;311],
+			id: 336,
+			tasks: [{
+				id: 337,
+				type: "item",
+				item: "minecraft:honey_block"
+			}],
+			rewards: [{
+				id: 338,
+				type: "item",
+				item: "minecraft:honey_block",
+				count: 4
+			}]
+		},
+		{
+			x: -3.0d,
+			y: 2.5d,
+			shape: "rsquare",
+			description: [
+				"The other great addition to modern vanilla redstone is the observer, basically a Block Update Detector (BUD) in a single block.",
+				"Observers can actually be useful in conjunction with ComputerCraft since they can watch a block without the need of a turtle sitting and `inspect`ing in a loop."
+			],
+			dependencies: [I;304],
+			id: 339,
+			tasks: [{
+				id: 340,
+				type: "item",
+				item: "minecraft:observer"
+			}],
+			rewards: [{
+				id: 341,
+				type: "item",
+				item: "minecraft:observer",
+				count: 4
+			}]
+		},
+		{
+			x: 3.0d,
+			y: 2.5d,
+			shape: "rsquare",
+			description: [
+				"Daylight sensors aren't very useful since computers have access to the time of day through the os api.",
+				"The weather sensor would actually be useful though, since weather impacts wireless modem range.",
+				"",
+				"Unfortunately Quarks weather sensor is locked behind End resources, so here's a trade."
+			],
+			dependencies: [I;311],
+			id: 342,
+			tasks: [{
+				id: 343,
+				type: "item",
+				item: "minecraft:daylight_detector",
+				consume_items: true
+			}],
+			rewards: [{
+				id: 344,
+				type: "item",
+				item: "quark:weather_sensor"
+			}]
+		}
+	]
+}
